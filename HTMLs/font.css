@@ -11,3 +11,12 @@ p{
     font-size: 120%;
     
 }
+#id1{
+    border:1em solid #ff00ee;
+    padding: 10px;
+}
+
+#id2{
+    border:2em dotted #ffe604 ;
+    margin: 140px;
+}
