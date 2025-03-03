@@ -12,4 +12,15 @@ div{
 }
 span{
     background-color: chartreuse;
+    
+}
+
+.one-div{
+    font-size: x-large;
+    background-color: black;
+}
+
+#one-id{
+    color: fuchsia;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
