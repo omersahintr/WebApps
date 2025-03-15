@@ -1,11 +1,11 @@
-import pandas as pd
-import requests as req
+#import pandas as pd
+#import requests as req
 
-print("hello")
-#link url
-print("python")
 
-def html_converter(url):
-    pass
+
+def Hello_Python(msg):
+    print(msg)
+
+Hello_Python("Print")
 
     
