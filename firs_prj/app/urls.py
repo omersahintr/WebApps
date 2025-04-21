@@ -2,9 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("",views.index, name="index"), ## url:index 
-    ##path("contacts",views.index, name="index") ## url:/contacts
-
-    path("<str:user_url>/", views.select_course, name="course")
+    path("",views.index, name="index"), ## url:indlocalhost/app/
+    path("<str:userurl>/", views.course, name="course"), ## url:localhost/app/cisco/
+    path("<int:n1>/<int:n2>/",views.multi_view,name="multi") ## url:localhost/app/4/8/
     
 ]
