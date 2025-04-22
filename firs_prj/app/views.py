@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 
 course_dict = {
     "python":"Welcome to Python Course",
@@ -27,8 +28,11 @@ def course(request,userurl):
         
         raise Http404("404 - This page is not found!")
     
-def course_select(request,n1): ##localhost/1/ --> localhost/swift/
-    if n1 == 1:
-        return HttpResponseRedirect("swift")
-    else:
-        return HttpResponseNotFound("This page not found!")
+def course_select(request,n1): ##localhost/1/ --> localhost/cisco/
+    course_list = list(course_dict.keys()) ##get dictionary id's
+    try:
+        course = course_list[n1]
+        page = reverse("course", args=[course]) ##select urls.py paths name parameters
+        return HttpResponseRedirect(page)
+    except:
+        raise Http404("404 - This page is not found!")
