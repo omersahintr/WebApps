@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseNotFound
 
 course_dict = {
     "python":"Welcome to Python Course",
@@ -24,4 +24,5 @@ def course(request,userurl):
         course = course_dict[userurl]
         return HttpResponse(course)
     except:
+        
         raise Http404("404 - This page is not found!")
