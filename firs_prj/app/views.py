@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, Http404, HttpResponseNotFound
+from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect
 
 course_dict = {
     "python":"Welcome to Python Course",
@@ -26,3 +26,9 @@ def course(request,userurl):
     except:
         
         raise Http404("404 - This page is not found!")
+    
+def course_select(request,n1): ##localhost/1/ --> localhost/swift/
+    if n1 == 1:
+        return HttpResponseRedirect("swift")
+    else:
+        return HttpResponseNotFound("This page not found!")
