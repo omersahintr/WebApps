@@ -11,3 +11,5 @@ Would you like to create highly functional and manageable Html pages using Templ
 8-How to Design a Website with Python Using a Template?
 
 Blog Source Page: https://www.omersahin.com.tr/en/django-templates-python/
+
+Screenshot Image: https://github.com/omersahintr/WebApps/blob/b3d5a5e2438e7732c8288a5e214512ad5d260f8e/Template/django-jinja.png
