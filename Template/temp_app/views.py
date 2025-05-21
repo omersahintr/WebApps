@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse
+import requests as req
+import datetime as dt
+
+
+
 
 # Create your views here.
 def index(request):
@@ -13,3 +18,41 @@ def currency(request):
                      "BTC":{"Ethereum":100590.84,"Doge":9.15,"Lite":3794.85}}
 
     return render(request,"temp_app/currency.html",context=currency_dict)
+####################################################
+
+
+def earthquake(request):
+    # VARIABLES:
+    start_date_year = "2025"
+    start_date_month = "03"
+    start_date_day = "01"
+    start_date_hour = "20"
+    start_date_minute = "00"
+    start_date_second = "00"
+
+    now = dt.datetime.now()
+    end_date_year = str(now.year)
+    end_date_month = str(now.month)
+    end_date_day = str(now.day)
+    end_date_hour = str(now.hour)
+    end_date_minute = str(now.minute)
+    end_date_second = str(now.second)
+
+    locator = "İstanbul"
+    mag = 3.0
+    i=0
+    
+    listing = []
+    
+    url = f"https://servisnet.afad.gov.tr/apigateway/deprem/apiv2/event/filter?start={start_date_year}-{start_date_month}-{start_date_day}%20{start_date_hour}:{start_date_minute}:{start_date_second}&end={end_date_year}-{end_date_month}-{end_date_day}%20{end_date_hour}:{end_date_minute}:{end_date_second}" #for live data
+
+    
+    response = req.get(url)
+    if response.status_code == 200:   
+        for query in response.json():
+            if query["province"] == locator and float(query["magnitude"])>mag:
+                i+=1
+                ##dict[f"a{i}"]=(f"{i} - {query["date"][0:16]}-{query["location"]}-{query["magnitude"]}--{query["depth"]}")
+                listing.append(f"{i} - {query["date"][0:16]}-{query["location"]}-{query["magnitude"]}")
+    dict = {"lister":listing}    
+    return render(request,"temp_app/earthquake.html",context=dict)
