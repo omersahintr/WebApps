@@ -7,10 +7,36 @@
 <body>
     <h1>Change Currency</h1>
     <!--Pull Data with Jinja Syntax-->
-    <b><font size=12 color="#FF0000">Dollar: <font color="000000">{{Dollar}}</font></font></b><br>
-    <b><font size=12 color="#FF0000">Euro: <font color="000000">{{Euro}}</font></font></b><br>
-    <b><font size=12 color="#FF0000">Gold: <font color="000000">{{Gold}}</font></font></b><br>
-    <b><font size=12 color="#FF0000">BTC: <font color="000000">{{BTC}}</font></font></b><br>
+    <b><font size=12 color="#FF0000">Dollar(Buy): <font color="000000">
+        {{Dollar.0}}
+    </font></font>
+     | <font size=12 color="#FF0000">  Dollar(Sell): <font color="000000">
+        {{Dollar.1}}
+    </font></font>
+    </b><br>
+    <b><font size=12 color="#FF0000">Euro(Buy): <font color="000000">
+        {{Euro.0}}
+        </font></font>
+     | <font size=12 color="#FF0000">Euro(Sell): <font color="000000">
+        {{Euro.1}}
+        </font></font>
+    </b><br>
+    <b><font size=12 color="#FF0000">Gold(Buy): <font color="000000">
+        {{Gold.0}}
+    </font></font>
+     | <font size=12 color="#FF0000">Gold(Sell): <font color="000000">
+        {{Gold.1}}
+    </font></font>
+    </b><br>
+    <b><font size=12 color="#FF0000">Ethereum: <font color="000000">
+        {{BTC.Ethereum}}
+    </font></font></b><br>
+    <b><font size=12 color="#FF0000">Doge Coin: <font color="000000">
+        {{BTC.Doge}}
+    </font></font></b><br>
+    <b><font size=12 color="#FF0000">Lite Coin: <font color="000000">
+        {{BTC.Lite}}
+    </font></font></b><br>
 
 </body>
 </html>
