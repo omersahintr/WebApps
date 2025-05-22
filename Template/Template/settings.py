@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "temp_app.apps.TempAppConfig",
+    "temp_app.apps.TempAppConfig", #my apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
