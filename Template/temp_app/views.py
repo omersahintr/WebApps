@@ -18,6 +18,8 @@ def currency(request):
                      "BTC":{"Ethereum":100590.84,"Doge":9.15,"Lite":3794.85}}
 
     return render(request,"temp_app/currency.html",context=currency_dict)
+
+
 ####################################################
 
 

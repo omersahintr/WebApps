@@ -8,6 +8,16 @@
 
     <h1>Change Currency</h1>
     <!--Pull Data with Jinja Syntax-->
+    {% for key,value in BTC.items %}
+        {{key}}:{{value}}<br>
+    {% endfor %}
+
+    {% for item in Euro %} 
+        <h2>{{item}}</h2>
+    {% endfor %}
+
+    
+    
     <b><font size=12 color="#FF0000">Dollar(Buy): <font color="000000">
         {{Dollar.0}}
     </font></font>
@@ -38,6 +48,7 @@
     <b><font size=12 color="#FF0000">Lite Coin: <font color="000000">
         {{BTC.Lite}}
     </font></font></b><br>
+
 
 </body>
 </html>
