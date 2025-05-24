@@ -4,9 +4,6 @@ from django.urls import reverse
 import requests as req
 import datetime as dt
 
-
-
-
 # Create your views here.
 def index(request):
     return render(request,"temp_app/first.html")
@@ -27,22 +24,33 @@ def currency(request):
 
 def earthquake(request):
     # VARIABLES:
-    start_date_year = "2025"
-    start_date_month = "03"
+    start_date_year = "2023"
+    start_date_month = "01"
     start_date_day = "01"
-    start_date_hour = "20"
+    start_date_hour = "00"
     start_date_minute = "00"
-    start_date_second = "00"
+    start_date_second = "01"
 
-    now = dt.datetime.now()
+    end_date_year = "2023"
+    end_date_month = "02"
+    end_date_day = "06"
+    end_date_hour = "23"
+    end_date_minute = "59"
+    end_date_second = "59"
+
+    """now = dt.datetime.now()
     end_date_year = str(now.year)
     end_date_month = str(now.month)
     end_date_day = str(now.day)
     end_date_hour = str(now.hour)
     end_date_minute = str(now.minute)
-    end_date_second = str(now.second)
+    end_date_second = str(now.second)"""
 
-    locator = "İstanbul"
+    locator1 = "Kahramanmaraş"
+    locator2 = "Malatya"
+    locator3 = "Adıyaman"
+    locator4 = "Hatay"
+
     mag = 3.0
     i=0
     
@@ -54,9 +62,11 @@ def earthquake(request):
     response = req.get(url)
     if response.status_code == 200:   
         for query in response.json():
-            if query["province"] == locator and float(query["magnitude"])>mag:
-                i+=1
-                ##dict[f"a{i}"]=(f"{i} - {query["date"][0:16]}-{query["location"]}-{query["magnitude"]}--{query["depth"]}")
-                listing.append(f"{i} - {query["date"][0:16]}-{query["location"]}-{query["magnitude"]}")
-    dict = {"lister":listing}    
+            if query["province"] == locator1 or query["province"]==locator2 or query["province"]==locator3 or query["province"]==locator4:
+                if float(query["magnitude"])>mag:
+                    i+=1
+                    ##dict.update({(f"{i}"):(f"{query["date"][0:16]}")})
+                    ##dict[f"a{i}"]=(f"{i} - {query["date"][0:16]}-{query["location"]}-{query["magnitude"]}--{query["depth"]}")
+                    listing.append(f"{i} - {query["date"][0:16]}-{query["location"]}-{query["magnitude"]}")
+    dict = {"lister":listing} 
     return render(request,"temp_app/earthquake.html",context=dict)

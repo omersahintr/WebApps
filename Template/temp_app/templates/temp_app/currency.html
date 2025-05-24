@@ -9,8 +9,10 @@
     <h1>Change Currency</h1>
     <!--Pull Data with Jinja Syntax-->
 
-    {% if user_pro %}
-        <h2>Pro Giriş Başarılı</h2>
+    {% if Dollar.1 > 39 %}
+        <h2>Dollar is the most expensive {{Dollar.1}}</h2>
+    {% else %}   
+        <h2>Dollar is very cheap  {{Dollar.1}}</h2>
     {% endif %}
 
     {% for key,value in BTC.items %}
