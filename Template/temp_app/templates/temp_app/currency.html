@@ -8,6 +8,10 @@
 
     <h1>Change Currency</h1>
     <!--Pull Data with Jinja Syntax-->
+    <b>Original:</b> {{testing}}<br>
+    <b>Upper:</b> {{testing | upper}}<br>
+    <b>Lower:</b> {{testing | lower}}<br>
+    
 
     {% if Dollar.1 > 39 %}
         <h2>Dollar is the most expensive {{Dollar.1}}</h2>

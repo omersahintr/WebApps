@@ -13,7 +13,8 @@ def currency(request):
                      "Euro":[43.55,44.05], 
                      "Gold":[3890.05,3982.44], 
                      "BTC":{"Ethereum":100590.84,"Doge":9.15,"Lite":3794.85},
-                     "user_pro" :  True
+                     "user_pro" :  True,
+                     "testing" : "TesT iS oK"
                      }
 
     return render(request,"temp_app/currency.html",context=currency_dict)
