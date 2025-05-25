@@ -8,6 +8,10 @@
 
     <h1>Change Currency</h1>
     <!--Pull Data with Jinja Syntax-->
+
+    <h2><a href="{% url 'temp_app:earthquake' %}">Earthquake Page</a></h2>
+    <h2><a href="{% url 'temp_app:index' %}">Home Page</a></h2>
+
     <b>Original:</b> {{testing}}<br>
     <b>Upper:</b> {{testing | upper}}<br>
     <b>Lower:</b> {{testing | lower}}<br>
