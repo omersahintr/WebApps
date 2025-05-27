@@ -1,15 +1,11 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eartquakes</title>
-</head>
-<body>
-    <h1>Eartquakes</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+    <br><br><br><br>
+    <h1>Earthquakes</h1>
     <table border=1><tr><td>Description</td></tr>
     {% for item in lister %}
     <tr><td>{{item}}</td></tr>
     {% endfor %}
     
-</body>
-</html>
+{% endblock %}
