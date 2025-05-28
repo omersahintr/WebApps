@@ -25,32 +25,32 @@ def currency(request):
 
 def earthquake(request):
     # VARIABLES:
-    start_date_year = "2023"
-    start_date_month = "01"
-    start_date_day = "01"
+    start_date_year = "2025"
+    start_date_month = "04"
+    start_date_day = "22"
     start_date_hour = "00"
     start_date_minute = "00"
     start_date_second = "01"
 
-    end_date_year = "2023"
+    """end_date_year = "2023"
     end_date_month = "02"
     end_date_day = "06"
     end_date_hour = "23"
     end_date_minute = "59"
-    end_date_second = "59"
+    end_date_second = "59" """
 
-    """now = dt.datetime.now()
+    now = dt.datetime.now()
     end_date_year = str(now.year)
     end_date_month = str(now.month)
     end_date_day = str(now.day)
     end_date_hour = str(now.hour)
     end_date_minute = str(now.minute)
-    end_date_second = str(now.second)"""
+    end_date_second = str(now.second)
 
-    locator1 = "Kahramanmaraş"
-    locator2 = "Malatya"
-    locator3 = "Adıyaman"
-    locator4 = "Hatay"
+    locator1 = "İstanbul"
+    locator2 = "Tekirdağ"
+    locator3 = "Bursa"
+    locator4 = "Bolu"
 
     mag = 3.0
     i=0

@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <br><br><br><br><br>
 <h2>Test Page Contents</h2>
+
+<img src="{% static '/temp_app/images.png' %}" alt="404 Logo">
+
 {% endblock %}
